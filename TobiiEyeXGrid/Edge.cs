@@ -8,8 +8,8 @@ namespace TobiiEyeXGrid
 {
     class Edge
     {
-        float x1, x2;
-        float y1, y2;
+        public float x1, x2;
+        public float y1, y2;
 
         public Edge(float newX1, float newY1, float newX2, float newY2)
         {

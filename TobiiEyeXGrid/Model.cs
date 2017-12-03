@@ -8,8 +8,8 @@ namespace TobiiEyeXGrid
 {
     class Model
     {
-        List<Vertex> vertices;
-        List<Edge> edges;
+        public List<Vertex> vertices;
+        public List<Edge> edges;
 
         public Model()
         {
@@ -32,7 +32,7 @@ namespace TobiiEyeXGrid
         public Boolean contains(float x, float y)
         {
             Boolean found = false;
-            foreach(var vertex in vertices)
+            foreach(Vertex vertex in vertices)
             {
                 if (vertex.contains(x, y))
                 {
@@ -41,5 +41,6 @@ namespace TobiiEyeXGrid
             }
             return found;
         }
+
     }
 }

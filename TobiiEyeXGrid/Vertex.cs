@@ -8,8 +8,8 @@ namespace TobiiEyeXGrid
 {
     class Vertex
     {
-        float x, y;
-        float radius;
+        public float x, y;
+        public float radius;
         List<Edge> connectedStartEdges;
         List<Edge> connectedEndEdges;
 
