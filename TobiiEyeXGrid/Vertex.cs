@@ -10,19 +10,16 @@ namespace TobiiEyeXGrid
     {
         float x, y;
         float radius;
-        int num;
         List<Edge> connectedStartEdges;
         List<Edge> connectedEndEdges;
 
-        public Vertex(float newX, float newY, float newR, int newNum)
+        public Vertex(float newX, float newY, float newR)
         {
             x = newX;
             y = newY;
             radius = newR;
-            num = newNum;
             connectedStartEdges = new List<Edge>();
             connectedEndEdges = new List<Edge>();
-
         }
 
         public Boolean contains(float tX, float tY)
