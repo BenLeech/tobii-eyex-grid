@@ -42,5 +42,10 @@ namespace TobiiEyeXGrid
             return found;
         }
 
+        public void generateGrid(Form1 form)
+        {
+            
+        }
+
     }
 }
