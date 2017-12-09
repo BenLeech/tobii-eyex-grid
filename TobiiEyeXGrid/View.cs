@@ -36,6 +36,7 @@ namespace TobiiEyeXGrid
         {
 
             Graphics g = e.Graphics;
+            g.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
 
             foreach (Edge edge in model.edges)
             {
@@ -48,7 +49,7 @@ namespace TobiiEyeXGrid
                 float y = vertex.y - vertex.radius;
                 float height = vertex.radius + vertex.radius;
                 float width = vertex.radius + vertex.radius;
-                g.DrawEllipse(bluePen, x, y, height, width);
+                g.FillEllipse(Brushes.Blue, x, y, height, width);
             }
 
             //g.Dispose();
