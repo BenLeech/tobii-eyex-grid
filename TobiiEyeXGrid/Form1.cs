@@ -23,7 +23,7 @@ namespace TobiiEyeXGrid
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            this.WindowState = FormWindowState.Maximized;
+            //this.WindowState = FormWindowState.Maximized;
 
             model = new Model();
             view = new View();

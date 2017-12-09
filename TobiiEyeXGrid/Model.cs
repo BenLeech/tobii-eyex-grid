@@ -12,6 +12,9 @@ namespace TobiiEyeXGrid
         public List<Vertex> vertices;
         public List<Edge> edges;
 
+        const int GRID_SPACING = 50;
+        const int VERTEX_RADIUS = 5;
+
         public Model()
         {
             vertices = new List<Vertex>();
@@ -45,9 +48,12 @@ namespace TobiiEyeXGrid
 
         public void generateGrid(Panel panel)
         {
-            for(int i=0; i<10; i++)
+            for(int i=0; i<30; i++)
             {
-                createVertex(0 + (i * 50), 50, 5);
+                for(int k=0; k<20; k++)
+                {
+                    createVertex((i* GRID_SPACING), (k * GRID_SPACING), VERTEX_RADIUS);
+                }
             }
         }
 
