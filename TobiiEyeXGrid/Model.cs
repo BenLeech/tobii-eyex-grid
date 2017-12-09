@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace TobiiEyeXGrid
 {
@@ -42,9 +43,12 @@ namespace TobiiEyeXGrid
             return found;
         }
 
-        public void generateGrid(Form1 form)
+        public void generateGrid(Panel panel)
         {
-            
+            for(int i=0; i<10; i++)
+            {
+                createVertex(0 + (i * 50), 50, 5);
+            }
         }
 
     }
