@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace TobiiEyeXGrid
 {
@@ -27,6 +28,14 @@ namespace TobiiEyeXGrid
         public void setView(View aView)
         {
             view = aView;
+        }
+
+        public void handleMouseDown(object sender, MouseEventArgs e)
+        {
+            if(model.contains(e.X, e.Y))
+            {
+                
+            }
         }
 
     }
