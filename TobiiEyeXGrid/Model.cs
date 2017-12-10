@@ -85,9 +85,9 @@ namespace TobiiEyeXGrid
         //creates new vertices and grid lines
         public void generateGrid(Panel panel)
         {
-            for(int i=0; i<30; i++)
+            for(int i=0; i<32; i++)
             {
-                for(int k=0; k<20; k++)
+                for(int k=0; k<16; k++)
                 {
                     createVertex((i* GRID_SPACING), (k * GRID_SPACING), VERTEX_RADIUS);
                     createGridLine((i * GRID_SPACING), (k * GRID_SPACING), (i * GRID_SPACING) + GRID_SPACING, (k * GRID_SPACING));

@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.panel1 = new GridPanel();
+            this.panel1 = new TobiiEyeXGrid.GridPanel();
             this.SuspendLayout();
             // 
             // panel1
@@ -37,7 +37,7 @@
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Location = new System.Drawing.Point(12, 22);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1250, 600);
+            this.panel1.Size = new System.Drawing.Size(1242, 602);
             this.panel1.TabIndex = 0;
             // 
             // Form1
@@ -55,7 +55,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Panel panel1;
+        private GridPanel panel1;
     }
 }
 
