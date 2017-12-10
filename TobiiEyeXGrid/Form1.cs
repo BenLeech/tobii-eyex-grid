@@ -15,20 +15,24 @@ namespace TobiiEyeXGrid
     {
         Model model;
         View view;
+        Controller controller;
 
         public Form1()
         {
             InitializeComponent();
         }
 
+        public Form1(Model aModel, View aView, Controller aController)
+        {
+            InitializeComponent();
+            model = aModel;
+            view = aView;
+            controller = aController;
+        }
+
         private void Form1_Load(object sender, EventArgs e)
         {
             //this.WindowState = FormWindowState.Maximized;
-
-            model = new Model();
-            view = new View();
-
-            view.setModel(model);
 
             panel1.Paint += view.onDraw;
 

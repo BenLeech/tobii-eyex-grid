@@ -9,7 +9,7 @@ using System.Windows.Forms;
 
 namespace TobiiEyeXGrid
 {
-    class View
+    public class View
     {
         Model model;
         Controller controller;

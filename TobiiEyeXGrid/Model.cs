@@ -7,7 +7,7 @@ using System.Windows.Forms;
 
 namespace TobiiEyeXGrid
 {
-    class Model
+    public class Model
     {
         public List<Vertex> vertices;
         public List<Edge> edges;

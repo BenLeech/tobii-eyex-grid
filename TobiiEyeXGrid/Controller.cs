@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TobiiEyeXGrid
 {
-    class Controller
+    public class Controller
     {
         Model model;
         View view;
