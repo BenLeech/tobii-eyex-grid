@@ -26,6 +26,7 @@ namespace TobiiEyeXGrid
         public void handleMouseMoveEvent(object sender, MouseEventArgs e, Controller controller)
         {
             controller.getModel().moveEdge(edge, e.X, e.Y);
+            (sender as Panel).Invalidate();
         }
 
         public void handleMouseUpEvent(object sender, MouseEventArgs e, Controller controller)
@@ -52,6 +53,7 @@ namespace TobiiEyeXGrid
 
             controller.selectedVertex = null;
             controller.currentEdge = null;
+            (sender as Panel).Invalidate();
             controller.state = new InputReadyState();
         }
 

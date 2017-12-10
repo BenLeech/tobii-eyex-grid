@@ -17,6 +17,8 @@ namespace TobiiEyeXGrid
 
             Edge edge = controller.getModel().createEdge(startingVertex.x, startingVertex.y, e.X, e.Y);
             controller.currentEdge = edge;
+
+            (sender as Panel).Invalidate();
         }
 
         public void handleMouseDownEvent(object sender, MouseEventArgs e, Controller controller)
