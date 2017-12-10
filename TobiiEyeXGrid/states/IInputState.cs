@@ -7,7 +7,7 @@ using System.Windows.Forms;
 
 namespace TobiiEyeXGrid
 {
-    interface IInputState
+    public interface IInputState
     {
         void handleMouseDownEvent(object sender, MouseEventArgs e, Controller controller);
 

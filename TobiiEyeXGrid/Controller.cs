@@ -16,11 +16,10 @@ namespace TobiiEyeXGrid
         public Vertex selectedVertex;
         public Edge currentEdge;
 
-        IInputState state = null;
+        public IInputState state = new InputReadyState();
 
         public Controller()
         {
-
         }
 
         public void setModel(Model aModel)
@@ -40,7 +39,7 @@ namespace TobiiEyeXGrid
 
         public void handleMouseDown(object sender, MouseEventArgs e)
         {
-            state = new CreateEdgeState();
+            
         }
 
         public void handleMouseUp(object sender, MouseEventArgs e)
