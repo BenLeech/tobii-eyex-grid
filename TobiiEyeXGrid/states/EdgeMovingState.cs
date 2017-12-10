@@ -11,7 +11,8 @@ namespace TobiiEyeXGrid
     {
         public void handleMouseEvent(object sender, MouseEventArgs e, Controller controller)
         {
-            throw new NotImplementedException();
+            Edge edge = controller.currentEdge;
+            controller.getModel().moveEdge(edge, e.X, e.Y);
         }
     }
 }

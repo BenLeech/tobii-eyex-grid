@@ -33,6 +33,13 @@ namespace TobiiEyeXGrid
             return edge;
         }
 
+        public void moveEdge(Edge edge, float newX, float newY)
+        {
+            edge.x2 = newX;
+            edge.y2 = newY;
+            //send out model changed event?
+        }
+
         public Boolean contains(float x, float y)
         {
             Boolean found = false;
