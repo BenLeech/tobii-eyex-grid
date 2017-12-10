@@ -45,6 +45,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="GridPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="states\InputReadyState.cs" />
     <Compile Include="states\EdgeMovingState.cs" />
     <Compile Include="states\CreateEdgeState.cs" />

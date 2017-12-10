@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel1 = new GridPanel();
             this.SuspendLayout();
             // 
             // panel1
