@@ -49,7 +49,7 @@ namespace TobiiEyeXGrid
                 float y = vertex.y - vertex.radius;
                 float height = vertex.radius + vertex.radius;
                 float width = vertex.radius + vertex.radius;
-                g.FillEllipse(Brushes.Blue, x, y, height, width);
+                g.FillEllipse(Brushes.Gray, x, y, height, width);
             }
 
             //g.Dispose();

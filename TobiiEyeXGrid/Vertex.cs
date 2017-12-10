@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TobiiEyeXGrid
 {
-    class Vertex
+    public class Vertex
     {
         public float x, y;
         public float radius;
