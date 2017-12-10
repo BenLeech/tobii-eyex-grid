@@ -19,9 +19,7 @@ namespace TobiiEyeXGrid
 
         public IInputState state = new InputReadyState();
 
-        public Controller()
-        {
-        }
+        public Controller(){}
 
         public void setModel(Model aModel)
         {

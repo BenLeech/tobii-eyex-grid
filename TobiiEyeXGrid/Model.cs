@@ -19,16 +19,19 @@ namespace TobiiEyeXGrid
 
         public Model()
         {
+            //instantiate lists
             vertices = new List<Vertex>();
             edges = new List<Edge>();
             gridLines = new List<GridLine>();
         }
 
+        //create a new vertex and add it to the list of vertices
         public void createVertex(float x, float y, float r)
         {
             vertices.Add(new Vertex(x, y, r));
         }
 
+        //create a new edge and add it to the list of edges
         public Edge createEdge(float x1, float y1, float x2, float y2)
         {
             Edge edge = new Edge(x1, y1, x2, y2);
@@ -36,17 +39,20 @@ namespace TobiiEyeXGrid
             return edge;
         }
 
+        //create a new grid line and add it to the list of grid lines
         public void createGridLine(float x1, float y1, float x2, float y2)
         {
             gridLines.Add(new GridLine(x1, y1, x2, y2));
         }
 
+        //move the end points of the edge passed in to parameters
         public void moveEdge(Edge edge, float newX, float newY)
         {
             edge.x2 = newX;
             edge.y2 = newY;
         }
 
+        //check if parameter position is over any vertices
         public Boolean contains(float x, float y)
         {
             Boolean found = false;
@@ -61,6 +67,7 @@ namespace TobiiEyeXGrid
             return found;
         }
 
+        //find the vertex at the given position
         public Vertex findVertexAtPosition(float x, float y)
         {
             Vertex foundVertex = null;
@@ -75,6 +82,7 @@ namespace TobiiEyeXGrid
             return foundVertex;
         }
 
+        //creates new vertices and grid lines
         public void generateGrid(Panel panel)
         {
             for(int i=0; i<30; i++)

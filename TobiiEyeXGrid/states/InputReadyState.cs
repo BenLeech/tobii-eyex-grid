@@ -12,7 +12,7 @@ namespace TobiiEyeXGrid.states
     {
         public void handleMouseDownEvent(object sender, MouseEventArgs e, Controller controller)
         {
-
+            //if mouse is over a vertex, set as current vertex and go to CreateEdgeState
             if(controller.getModel().contains(e.X, e.Y))
             {
                 controller.selectedVertex = controller.getModel().findVertexAtPosition(e.X, e.Y);

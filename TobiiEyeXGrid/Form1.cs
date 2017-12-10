@@ -28,26 +28,21 @@ namespace TobiiEyeXGrid
             model = aModel;
             view = aView;
             controller = aController;
-
-            this.DoubleBuffered = true;
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
             //this.WindowState = FormWindowState.Maximized;
 
+            //add event handlers
             panel1.Paint += view.onDraw;
             panel1.MouseDown += controller.handleMouseDown;
             panel1.MouseUp += controller.handleMouseUp;
             panel1.MouseMove += controller.handleMouseMove;
 
+            //draw grid
             model.generateGrid(panel1);
             panel1.Invalidate();
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-            
         }
     }
 }
