@@ -46,6 +46,20 @@ namespace TobiiEyeXGrid
             return found;
         }
 
+        public Vertex findVertexAtPosition(float x, float y)
+        {
+            Vertex foundVertex = null;
+
+            foreach(Vertex vertex in vertices){
+                if(vertex.contains(x, y))
+                {
+                    foundVertex = vertex;
+                }
+            }
+
+            return foundVertex;
+        }
+
         public void generateGrid(Panel panel)
         {
             for(int i=0; i<30; i++)

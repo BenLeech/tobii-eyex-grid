@@ -13,7 +13,7 @@ namespace TobiiEyeXGrid
         View view;
 
         Vertex selected;
-        Edge currentEdge;
+        public Edge currentEdge;
 
         public Controller()
         {
@@ -28,6 +28,11 @@ namespace TobiiEyeXGrid
         public void setView(View aView)
         {
             view = aView;
+        }
+
+        public Model getModel()
+        {
+            return model;
         }
 
         public void handleMouseDown(object sender, MouseEventArgs e)

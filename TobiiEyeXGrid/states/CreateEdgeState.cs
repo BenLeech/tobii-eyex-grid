@@ -7,11 +7,15 @@ using System.Windows.Forms;
 
 namespace TobiiEyeXGrid
 {
-    class EdgeMovingState : IInputState
+    class CreateEdgeState : IInputState
     {
         public void handleMouseEvent(object sender, MouseEventArgs e, Controller controller)
         {
-            throw new NotImplementedException();
+            Vertex startingVertex = controller.getModel().findVertexAtPosition(e.X, e.Y);
+
+            Edge edge = controller.getModel().createEdge(startingVertex.x, startingVertex.y, e.X, e.Y);
+            controller.currentEdge = edge;
+            
         }
     }
 }
