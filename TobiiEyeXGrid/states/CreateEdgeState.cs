@@ -34,7 +34,17 @@ namespace TobiiEyeXGrid
 
         public void handleMouseUpEvent(object sender, MouseEventArgs e, Controller controller)
         {
+            removeCurrentEdge(controller);
+            controller.currentEdge = null;
+            controller.selectedVertex = null;
+            (sender as Panel).Invalidate();
             controller.state = new InputReadyState();
+        }
+
+        //removes the current edge from the model
+        private void removeCurrentEdge(Controller controller)
+        {
+            controller.getModel().edges.Remove(controller.currentEdge);
         }
     }
 }

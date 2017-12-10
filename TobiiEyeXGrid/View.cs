@@ -21,7 +21,7 @@ namespace TobiiEyeXGrid
         {
             //instanstiate pens
             bluePen = new Pen(Brushes.Blue, 3);
-            greyPen = new Pen(Brushes.Gray, 1);
+            greyPen = new Pen(ColorTranslator.FromHtml("#b3b3b3"), 1);
         }
 
         public void setModel(Model aModel)
@@ -40,20 +40,20 @@ namespace TobiiEyeXGrid
             Graphics g = e.Graphics;
             g.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
 
+            //draw each grid line
+            foreach (GridLine gridLine in model.gridLines)
+            {
+                g.DrawLine(greyPen, gridLine.x1, gridLine.y1, gridLine.x2, gridLine.y2);
+            }
+
             //draw each vertex in the model
-            foreach(Vertex vertex in model.vertices)
+            foreach (Vertex vertex in model.vertices)
             {
                 float x = vertex.x - vertex.radius;
                 float y = vertex.y - vertex.radius;
                 float height = vertex.radius + vertex.radius;
                 float width = vertex.radius + vertex.radius;
                 g.FillEllipse(Brushes.Gray, x, y, height, width);
-            }
-
-            //draw each grid line
-            foreach(GridLine gridLine in model.gridLines)
-            {
-                g.DrawLine(greyPen, gridLine.x1, gridLine.y1, gridLine.x2, gridLine.y2);
             }
 
             //draw each edge
