@@ -45,6 +45,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="GridLine.cs" />
     <Compile Include="GridPanel.cs">
       <SubType>Component</SubType>
     </Compile>

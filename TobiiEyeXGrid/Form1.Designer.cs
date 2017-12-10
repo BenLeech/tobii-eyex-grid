@@ -47,7 +47,7 @@
             this.ClientSize = new System.Drawing.Size(1273, 642);
             this.Controls.Add(this.panel1);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Tobii Eye Tracking Grid Draw";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
 
