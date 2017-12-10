@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TobiiEyeXGrid.states;
 
 namespace TobiiEyeXGrid
 {
@@ -39,6 +40,7 @@ namespace TobiiEyeXGrid
 
             controller.selectedVertex = null;
             controller.currentEdge = null;
+            controller.state = new InputReadyState();
         }
 
         private void removeCurrentEdge(Controller controller)

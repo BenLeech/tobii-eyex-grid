@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -24,7 +25,7 @@ namespace TobiiEyeXGrid
 
         public Boolean contains(float tX, float tY)
         {
-            return tX >= x - radius && tX <= x + radius && tY >= y - radius && tY <= y - radius;
+            return (tX >= x - radius) && (tX <= x + radius) && (tY >= y - radius) && (tY <= y + radius);
         }
     }
 }

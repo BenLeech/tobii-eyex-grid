@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,6 +12,7 @@ namespace TobiiEyeXGrid.states
     {
         public void handleMouseDownEvent(object sender, MouseEventArgs e, Controller controller)
         {
+
             if(controller.getModel().contains(e.X, e.Y))
             {
                 controller.selectedVertex = controller.getModel().findVertexAtPosition(e.X, e.Y);

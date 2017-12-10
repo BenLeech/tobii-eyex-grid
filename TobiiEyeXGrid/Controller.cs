@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -39,12 +40,12 @@ namespace TobiiEyeXGrid
 
         public void handleMouseDown(object sender, MouseEventArgs e)
         {
-            
+            state.handleMouseDownEvent(sender, e, this);
         }
 
         public void handleMouseUp(object sender, MouseEventArgs e)
         {
-            
+            state.handleMouseUpEvent(sender, e, this);
         }
 
     }

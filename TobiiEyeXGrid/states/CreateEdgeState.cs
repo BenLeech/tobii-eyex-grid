@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TobiiEyeXGrid.states;
 
 namespace TobiiEyeXGrid
 {
@@ -15,11 +16,13 @@ namespace TobiiEyeXGrid
 
             Edge edge = controller.getModel().createEdge(startingVertex.x, startingVertex.y, e.X, e.Y);
             controller.currentEdge = edge;
+
+            controller.state = new EdgeMovingState();
         }
 
         public void handleMouseUpEvent(object sender, MouseEventArgs e, Controller controller)
         {
-            throw new NotImplementedException();
+            controller.state = new InputReadyState();
         }
     }
 }

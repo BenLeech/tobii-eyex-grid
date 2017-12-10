@@ -35,6 +35,8 @@ namespace TobiiEyeXGrid
             //this.WindowState = FormWindowState.Maximized;
 
             panel1.Paint += view.onDraw;
+            panel1.MouseDown += controller.handleMouseDown;
+            panel1.MouseUp += controller.handleMouseUp;
 
             model.generateGrid(panel1);
             panel1.Invalidate();
