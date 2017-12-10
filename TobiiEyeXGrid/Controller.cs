@@ -48,5 +48,10 @@ namespace TobiiEyeXGrid
             state.handleMouseUpEvent(sender, e, this);
         }
 
+        public void handleMouseMove(object sender, MouseEventArgs e)
+        {
+            state.handleMouseMoveEvent(sender, e, this);
+        }
+
     }
 }

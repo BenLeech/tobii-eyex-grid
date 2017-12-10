@@ -16,8 +16,12 @@ namespace TobiiEyeXGrid.states
             if(controller.getModel().contains(e.X, e.Y))
             {
                 controller.selectedVertex = controller.getModel().findVertexAtPosition(e.X, e.Y);
-                controller.state = new CreateEdgeState();
+                controller.state = new CreateEdgeState(sender, e, controller);
             }
+        }
+
+        public void handleMouseMoveEvent(object sender, MouseEventArgs e, Controller controller)
+        {
         }
 
         public void handleMouseUpEvent(object sender, MouseEventArgs e, Controller controller)

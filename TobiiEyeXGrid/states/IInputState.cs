@@ -12,5 +12,7 @@ namespace TobiiEyeXGrid
         void handleMouseDownEvent(object sender, MouseEventArgs e, Controller controller);
 
         void handleMouseUpEvent(object sender, MouseEventArgs e, Controller controller);
+
+        void handleMouseMoveEvent(object sender, MouseEventArgs e, Controller controller);
     }
 }

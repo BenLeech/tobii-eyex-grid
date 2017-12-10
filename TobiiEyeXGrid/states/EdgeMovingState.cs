@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,9 +11,20 @@ namespace TobiiEyeXGrid
 {
     public class EdgeMovingState : IInputState
     {
+
+        Edge edge = null;
+
+        public EdgeMovingState(object sender, MouseEventArgs e, Controller controller)
+        {
+            edge = controller.currentEdge;
+        }
+
         public void handleMouseDownEvent(object sender, MouseEventArgs e, Controller controller)
         {
-            Edge edge = controller.currentEdge;
+        }
+
+        public void handleMouseMoveEvent(object sender, MouseEventArgs e, Controller controller)
+        {
             controller.getModel().moveEdge(edge, e.X, e.Y);
         }
 
