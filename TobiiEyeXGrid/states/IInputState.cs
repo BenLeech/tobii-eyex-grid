@@ -9,6 +9,8 @@ namespace TobiiEyeXGrid
 {
     interface IInputState
     {
-        void handleMouseEvent(object sender, MouseEventArgs e, Controller controller);
+        void handleMouseDownEvent(object sender, MouseEventArgs e, Controller controller);
+
+        void handleMouseUpEvent(object sender, MouseEventArgs e, Controller controller);
     }
 }

@@ -45,7 +45,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="states\EdgeUpState.cs" />
+    <Compile Include="states\InputReadyState.cs" />
     <Compile Include="states\EdgeMovingState.cs" />
     <Compile Include="states\CreateEdgeState.cs" />
     <Compile Include="states\IInputState.cs" />

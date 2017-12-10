@@ -76,6 +76,7 @@ namespace TobiiEyeXGrid
                     createVertex((i* GRID_SPACING), (k * GRID_SPACING), VERTEX_RADIUS);
                 }
             }
+
         }
 
     }

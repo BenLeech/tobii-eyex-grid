@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TobiiEyeXGrid.states;
 
 namespace TobiiEyeXGrid
 {
@@ -14,6 +15,8 @@ namespace TobiiEyeXGrid
 
         public Vertex selectedVertex;
         public Edge currentEdge;
+
+        IInputState state = null;
 
         public Controller()
         {
@@ -37,10 +40,12 @@ namespace TobiiEyeXGrid
 
         public void handleMouseDown(object sender, MouseEventArgs e)
         {
-            if(model.contains(e.X, e.Y))
-            {
-                
-            }
+            state = new CreateEdgeState();
+        }
+
+        public void handleMouseUp(object sender, MouseEventArgs e)
+        {
+            
         }
 
     }
