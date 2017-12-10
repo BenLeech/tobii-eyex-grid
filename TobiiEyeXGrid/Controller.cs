@@ -12,7 +12,7 @@ namespace TobiiEyeXGrid
         Model model;
         View view;
 
-        Vertex selected;
+        public Vertex selectedVertex;
         public Edge currentEdge;
 
         public Controller()
