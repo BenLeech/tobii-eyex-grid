@@ -1,9 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace TobiiEyeXGrid
 {
@@ -11,16 +6,12 @@ namespace TobiiEyeXGrid
     {
         public float x, y;
         public float radius;
-        //List<Edge> connectedStartEdges;
-        //List<Edge> connectedEndEdges;
 
         public Vertex(float newX, float newY, float newR)
         {
             x = newX;
             y = newY;
             radius = newR;
-            //connectedStartEdges = new List<Edge>();
-            //connectedEndEdges = new List<Edge>();
         }
 
         public Boolean contains(float tX, float tY)
