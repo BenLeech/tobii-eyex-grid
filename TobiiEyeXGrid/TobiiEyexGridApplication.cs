@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
+using Tobii.Interaction;
 
 namespace TobiiEyeXGrid
 {
@@ -22,6 +23,9 @@ namespace TobiiEyeXGrid
             view.setModel(model);
             controller.setModel(model);
             controller.setView(view);
+
+            //Tobii setup
+            Host host = new Host();
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);

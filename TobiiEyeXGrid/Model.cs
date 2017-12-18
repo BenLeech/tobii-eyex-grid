@@ -1,11 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Windows.Forms;
+using Tobii.Interaction;
 
 namespace TobiiEyeXGrid
 {
     public class Model
     {
+        public Boolean gazeEnabled;
+
         public List<Vertex> vertices;
         public List<Edge> edges;
         public List<GridLine> gridLines;
@@ -91,6 +95,23 @@ namespace TobiiEyeXGrid
                 }
             }
 
+        }
+
+        private static void moveCursor(int x, int y)
+        {
+            Cursor.Position = new Point(x,y);
+        }
+
+        private void createGazeDataStream()
+        {
+            Host host = new Host();
+            var gazePointDataStream = host.Streams.CreateGazePointDataStream();
+            gazePointDataStream.GazePoint((x, y, _) => {
+                if (gazeEnabled)
+                {
+                    moveCursor((int)x, (int)y);
+                }
+            });
         }
 
     }
