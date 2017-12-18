@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Drawing;
 using System.Windows.Forms;
 using Tobii.Interaction;
@@ -97,9 +98,9 @@ namespace TobiiEyeXGrid
 
         }
 
-        private static void moveCursor(int x, int y)
+        public void toggleGazeControl()
         {
-            Cursor.Position = new Point(x,y);
+            gazeEnabled = !gazeEnabled;
         }
 
         private void createGazeDataStream()
@@ -109,7 +110,7 @@ namespace TobiiEyeXGrid
             gazePointDataStream.GazePoint((x, y, _) => {
                 if (gazeEnabled)
                 {
-                    moveCursor((int)x, (int)y);
+                    Cursor.Position = new Point((int)x, (int)y);
                 }
             });
         }

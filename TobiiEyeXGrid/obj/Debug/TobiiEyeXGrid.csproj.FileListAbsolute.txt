@@ -8,3 +8,6 @@ c:\users\bleec\source\repos\TobiiEyeXGrid\TobiiEyeXGrid\obj\Debug\TobiiEyeXGrid.
 c:\users\bleec\source\repos\TobiiEyeXGrid\TobiiEyeXGrid\obj\Debug\TobiiEyeXGrid.csproj.CoreCompileInputs.cache
 c:\users\bleec\source\repos\TobiiEyeXGrid\TobiiEyeXGrid\obj\Debug\TobiiEyeXGrid.exe
 c:\users\bleec\source\repos\TobiiEyeXGrid\TobiiEyeXGrid\obj\Debug\TobiiEyeXGrid.pdb
+C:\Users\bleec\source\repos\TobiiEyeXGrid\TobiiEyeXGrid\bin\Debug\Tobii.EyeX.Client.dll
+C:\Users\bleec\source\repos\TobiiEyeXGrid\TobiiEyeXGrid\bin\Debug\Tobii.Interaction.Model.dll
+C:\Users\bleec\source\repos\TobiiEyeXGrid\TobiiEyeXGrid\bin\Debug\Tobii.Interaction.Net.dll

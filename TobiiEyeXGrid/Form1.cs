@@ -32,6 +32,8 @@ namespace TobiiEyeXGrid
             panel1.MouseUp += controller.handleMouseUp;
             panel1.MouseMove += controller.handleMouseMove;
 
+            button1.Click += controller.handleToggleGazeButtonClick;
+
             //draw grid
             model.generateGrid(panel1);
             panel1.Invalidate();
