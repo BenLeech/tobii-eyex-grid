@@ -24,6 +24,9 @@ namespace TobiiEyeXGrid
             vertices = new List<Vertex>();
             edges = new List<Edge>();
             gridLines = new List<GridLine>();
+
+            //create data stream
+            createGazeDataStream();
         }
 
         //create a new vertex and add it to the list of vertices

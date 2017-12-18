@@ -27,9 +27,6 @@ namespace TobiiEyeXGrid
             controller.setModel(model);
             controller.setView(view);
 
-            //Tobii setup
-            Host host = new Host();
-
             //Form setup
             Form1 form = new Form1(model, view, controller);
 

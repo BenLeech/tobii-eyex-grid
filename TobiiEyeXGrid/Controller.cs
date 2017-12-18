@@ -51,5 +51,14 @@ namespace TobiiEyeXGrid
             model.toggleGazeControl();
         }
 
+        public void handleKeyPress(object sender, KeyPressEventArgs e)
+        {
+            if(e.KeyChar == 't')
+            {
+                model.toggleGazeControl();
+            }
+            
+        }
+
     }
 }
