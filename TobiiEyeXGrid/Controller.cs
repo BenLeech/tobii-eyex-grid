@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using System.Windows.Forms;
 using TobiiEyeXGrid.states;
 
@@ -58,6 +59,22 @@ namespace TobiiEyeXGrid
                 model.toggleGazeControl();
             }
             
+        }
+
+        public void handleKeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Space)
+            {
+                model.doMouseDown();
+            }
+        }
+
+        public void handleKeyUp(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Space)
+            {
+                model.doMouseUp();
+            }
         }
 
     }

@@ -36,6 +36,8 @@ namespace TobiiEyeXGrid
             button1.Click += controller.handleToggleGazeButtonClick;
 
             this.KeyPress += controller.handleKeyPress;
+            this.KeyDown += controller.handleKeyDown;
+            this.KeyUp += controller.handleKeyUp;
 
             //draw grid
             model.generateGrid(panel1);
