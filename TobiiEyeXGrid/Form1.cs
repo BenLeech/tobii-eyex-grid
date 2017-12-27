@@ -39,9 +39,16 @@ namespace TobiiEyeXGrid
             this.KeyDown += controller.handleKeyDown;
             this.KeyUp += controller.handleKeyUp;
 
+            this.FormClosed += Form1_Close;
+
             //draw grid
             model.generateGrid(panel1);
             panel1.Invalidate();
+        }
+
+        private void Form1_Close(object sender, EventArgs e)
+        {
+            Environment.Exit(Environment.ExitCode);
         }
     }
 }
