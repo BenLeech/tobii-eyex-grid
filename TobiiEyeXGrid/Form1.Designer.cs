@@ -30,6 +30,7 @@
         {
             this.panel1 = new TobiiEyeXGrid.GridPanel();
             this.button1 = new System.Windows.Forms.Button();
+            this.checkBoxGridSnap = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // panel1
@@ -50,17 +51,29 @@
             this.button1.Text = "Toggle Gaze Control   ( t )";
             this.button1.UseVisualStyleBackColor = true;
             // 
+            // checkBoxGridSnap
+            // 
+            this.checkBoxGridSnap.AutoSize = true;
+            this.checkBoxGridSnap.Location = new System.Drawing.Point(231, 18);
+            this.checkBoxGridSnap.Name = "checkBoxGridSnap";
+            this.checkBoxGridSnap.Size = new System.Drawing.Size(85, 17);
+            this.checkBoxGridSnap.TabIndex = 2;
+            this.checkBoxGridSnap.Text = "Snap to Grid";
+            this.checkBoxGridSnap.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1273, 656);
+            this.Controls.Add(this.checkBoxGridSnap);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.panel1);
             this.Name = "Form1";
             this.Text = "Tobii Eye Tracking Grid Draw";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -68,6 +81,7 @@
 
         private GridPanel panel1;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.CheckBox checkBoxGridSnap;
     }
 }
 
