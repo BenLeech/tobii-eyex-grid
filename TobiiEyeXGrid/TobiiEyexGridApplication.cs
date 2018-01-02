@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
+using Tobii.Interaction;
 
 namespace TobiiEyeXGrid
 {
@@ -13,6 +14,9 @@ namespace TobiiEyeXGrid
         static void Main()
         {
 
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
+
             //MVC instantization
             Model model = new Model();
             View view = new View();
@@ -23,9 +27,10 @@ namespace TobiiEyeXGrid
             controller.setModel(model);
             controller.setView(view);
 
-            Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1(model, view, controller));
+            //Form setup
+            Form1 form = new Form1(model, view, controller);
+
+            Application.Run(form);
         }
     }
 }

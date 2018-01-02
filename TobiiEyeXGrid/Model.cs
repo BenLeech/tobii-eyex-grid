@@ -1,11 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
+using System.Drawing;
+using System.Runtime.InteropServices;
 using System.Windows.Forms;
+using Tobii.Interaction;
 
 namespace TobiiEyeXGrid
 {
     public class Model
     {
+        public Boolean gazeEnabled;
+
         public List<Vertex> vertices;
         public List<Edge> edges;
         public List<GridLine> gridLines;
@@ -13,12 +19,22 @@ namespace TobiiEyeXGrid
         const int GRID_SPACING = 40;
         const int VERTEX_RADIUS = 5;
 
+        [DllImport("user32.dll", CharSet = CharSet.Auto, CallingConvention = CallingConvention.StdCall)]
+        public static extern void mouse_event(uint dwFlags, uint dx, uint dy, uint cButtons, uint dwExtraInfo);
+        //Mouse actions
+        private const int MOUSEEVENTF_LEFTDOWN = 0x02;
+        private const int MOUSEEVENTF_LEFTUP = 0x04;
+
+
         public Model()
         {
             //instantiate lists
             vertices = new List<Vertex>();
             edges = new List<Edge>();
             gridLines = new List<GridLine>();
+
+            //create data stream
+            createGazeDataStream();
         }
 
         //create a new vertex and add it to the list of vertices
@@ -91,6 +107,33 @@ namespace TobiiEyeXGrid
                 }
             }
 
+        }
+
+        public void toggleGazeControl()
+        {
+            gazeEnabled = !gazeEnabled;
+        }
+
+        public void doMouseDown()
+        {
+            mouse_event(MOUSEEVENTF_LEFTDOWN, (uint)Cursor.Position.X, (uint)Cursor.Position.Y, 0, 0);
+        }
+
+        public void doMouseUp()
+        {
+            mouse_event(MOUSEEVENTF_LEFTUP, (uint)Cursor.Position.X, (uint)Cursor.Position.Y, 0, 0);
+        }
+
+        private void createGazeDataStream()
+        {
+            Host host = new Host();
+            var gazePointDataStream = host.Streams.CreateGazePointDataStream();
+            gazePointDataStream.GazePoint((x, y, _) => {
+                if (gazeEnabled)
+                {
+                    Cursor.Position = new Point((int)x, (int)y);
+                }
+            });
         }
 
     }

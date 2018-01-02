@@ -1,4 +1,6 @@
-﻿using System.Windows.Forms;
+﻿using System;
+using System.Diagnostics;
+using System.Windows.Forms;
 using TobiiEyeXGrid.states;
 
 namespace TobiiEyeXGrid
@@ -43,6 +45,36 @@ namespace TobiiEyeXGrid
         public void handleMouseMove(object sender, MouseEventArgs e)
         {
             state.handleMouseMoveEvent(sender, e, this);
+        }
+
+        public void handleToggleGazeButtonClick(object sender, EventArgs e)
+        {
+            model.toggleGazeControl();
+        }
+
+        public void handleKeyPress(object sender, KeyPressEventArgs e)
+        {
+            if(e.KeyChar == 't')
+            {
+                model.toggleGazeControl();
+            }
+            
+        }
+
+        public void handleKeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Space)
+            {
+                model.doMouseDown();
+            }
+        }
+
+        public void handleKeyUp(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Space)
+            {
+                model.doMouseUp();
+            }
         }
 
     }

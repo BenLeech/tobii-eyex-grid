@@ -1,10 +1,4 @@
-c:\users\bleec\source\repos\TobiiEyeXGrid\TobiiEyeXGrid\bin\Debug\TobiiEyeXGrid.exe.config
 c:\users\bleec\source\repos\TobiiEyeXGrid\TobiiEyeXGrid\bin\Debug\TobiiEyeXGrid.exe
-c:\users\bleec\source\repos\TobiiEyeXGrid\TobiiEyeXGrid\bin\Debug\TobiiEyeXGrid.pdb
-c:\users\bleec\source\repos\TobiiEyeXGrid\TobiiEyeXGrid\obj\Debug\TobiiEyeXGrid.csprojResolveAssemblyReference.cache
-c:\users\bleec\source\repos\TobiiEyeXGrid\TobiiEyeXGrid\obj\Debug\TobiiEyeXGrid.Form1.resources
-c:\users\bleec\source\repos\TobiiEyeXGrid\TobiiEyeXGrid\obj\Debug\TobiiEyeXGrid.Properties.Resources.resources
-c:\users\bleec\source\repos\TobiiEyeXGrid\TobiiEyeXGrid\obj\Debug\TobiiEyeXGrid.csproj.GenerateResource.Cache
-c:\users\bleec\source\repos\TobiiEyeXGrid\TobiiEyeXGrid\obj\Debug\TobiiEyeXGrid.csproj.CoreCompileInputs.cache
-c:\users\bleec\source\repos\TobiiEyeXGrid\TobiiEyeXGrid\obj\Debug\TobiiEyeXGrid.exe
-c:\users\bleec\source\repos\TobiiEyeXGrid\TobiiEyeXGrid\obj\Debug\TobiiEyeXGrid.pdb
+C:\Users\bleec\source\repos\TobiiEyeXGrid\TobiiEyeXGrid\bin\Debug\Tobii.EyeX.Client.dll
+C:\Users\bleec\source\repos\TobiiEyeXGrid\TobiiEyeXGrid\bin\Debug\Tobii.Interaction.Model.dll
+C:\Users\bleec\source\repos\TobiiEyeXGrid\TobiiEyeXGrid\bin\Debug\Tobii.Interaction.Net.dll

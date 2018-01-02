@@ -25,6 +25,7 @@ namespace TobiiEyeXGrid
         private void Form1_Load(object sender, EventArgs e)
         {
             //this.WindowState = FormWindowState.Maximized;
+            this.KeyPreview = true;
 
             //add event handlers
             panel1.Paint += view.onDraw;
@@ -32,9 +33,22 @@ namespace TobiiEyeXGrid
             panel1.MouseUp += controller.handleMouseUp;
             panel1.MouseMove += controller.handleMouseMove;
 
+            button1.Click += controller.handleToggleGazeButtonClick;
+
+            this.KeyPress += controller.handleKeyPress;
+            this.KeyDown += controller.handleKeyDown;
+            this.KeyUp += controller.handleKeyUp;
+
+            this.FormClosed += Form1_Close;
+
             //draw grid
             model.generateGrid(panel1);
             panel1.Invalidate();
+        }
+
+        private void Form1_Close(object sender, EventArgs e)
+        {
+            Environment.Exit(Environment.ExitCode);
         }
     }
 }
