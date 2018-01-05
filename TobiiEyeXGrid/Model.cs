@@ -11,6 +11,7 @@ namespace TobiiEyeXGrid
     public class Model
     {
         public Boolean gazeEnabled;
+        public Boolean gridSnap = true;
 
         public List<Vertex> vertices;
         public List<Edge> edges;
@@ -92,6 +93,25 @@ namespace TobiiEyeXGrid
             }
 
             return foundVertex;
+        }
+
+        public Vertex findClosestVertexAtPosition(float x, float y)
+        {
+            Vertex closestVertex = null;
+            float closestDitance = float.MaxValue;
+            float currentDistance = 0;
+
+            foreach(Vertex vertex in vertices)
+            {
+                currentDistance = (long)Math.Sqrt(Math.Pow(vertex.x - x, 2) + Math.Pow(vertex.y - y, 2));
+                if(currentDistance < closestDitance)
+                {
+                    closestDitance = currentDistance;
+                    closestVertex = vertex;
+                }
+            }
+
+            return closestVertex;
         }
 
         //creates new vertices and grid lines

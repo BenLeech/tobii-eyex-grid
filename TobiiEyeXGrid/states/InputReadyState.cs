@@ -11,6 +11,10 @@ namespace TobiiEyeXGrid.states
             {
                 controller.selectedVertex = controller.getModel().findVertexAtPosition(e.X, e.Y);
                 controller.state = new CreateEdgeState(sender, e, controller);
+            }else if (controller.getModel().gridSnap.Equals(true))
+            {
+                controller.selectedVertex = controller.getModel().findClosestVertexAtPosition(e.X, e.Y);
+                controller.state = new CreateEdgeState(sender, e, controller);
             }
         }
 

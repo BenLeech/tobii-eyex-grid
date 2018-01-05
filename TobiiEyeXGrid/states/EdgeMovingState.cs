@@ -41,6 +41,20 @@ namespace TobiiEyeXGrid
                     controller.getModel().moveEdge(controller.currentEdge, endVertex.x, endVertex.y);
                 }
             }
+            else if (controller.getModel().gridSnap.Equals(true))
+            {
+                Vertex endVertex = controller.getModel().findClosestVertexAtPosition(e.X, e.Y);
+
+                //if the end vertex is the same as the start vertex, remove the current edge;
+                if (endVertex.Equals(controller.selectedVertex))
+                {
+                    removeCurrentEdge(controller);
+                }
+                else //otherwise, reposition the edge to the centre of the endVertex
+                {
+                    controller.getModel().moveEdge(controller.currentEdge, endVertex.x, endVertex.y);
+                }
+            }
             else //remove the current edge if it doesn't end over another vertex;
             {
                 removeCurrentEdge(controller);

@@ -7,8 +7,7 @@ namespace TobiiEyeXGrid
     {
         public CreateEdgeState(object sender, MouseEventArgs e, Controller controller)
         {
-            //find the vertex that the mouseDown event fired on
-            Vertex startingVertex = controller.getModel().findVertexAtPosition(e.X, e.Y);
+            Vertex startingVertex = controller.selectedVertex;
 
             //create an edge anchored to the starting vertex
             Edge edge = controller.getModel().createEdge(startingVertex.x, startingVertex.y, e.X, e.Y);
