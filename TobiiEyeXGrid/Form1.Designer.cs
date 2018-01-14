@@ -28,30 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.panel1 = new TobiiEyeXGrid.GridPanel();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnToggleGaze = new System.Windows.Forms.Button();
             this.checkBoxGridSnap = new System.Windows.Forms.CheckBox();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnClearDrawing = new System.Windows.Forms.Button();
+            this.panel1 = new TobiiEyeXGrid.GridPanel();
             this.SuspendLayout();
             // 
-            // panel1
+            // btnToggleGaze
             // 
-            this.panel1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Location = new System.Drawing.Point(12, 44);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1242, 602);
-            this.panel1.TabIndex = 0;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(13, 13);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(200, 23);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Toggle Gaze Control   ( t )";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnToggleGaze.Location = new System.Drawing.Point(13, 13);
+            this.btnToggleGaze.Name = "btnToggleGaze";
+            this.btnToggleGaze.Size = new System.Drawing.Size(200, 23);
+            this.btnToggleGaze.TabIndex = 1;
+            this.btnToggleGaze.Text = "Toggle Gaze Control   ( t )";
+            this.btnToggleGaze.UseVisualStyleBackColor = true;
             // 
             // checkBoxGridSnap
             // 
@@ -77,24 +68,33 @@
             this.checkBox1.Text = "Show Grid Lines";
             this.checkBox1.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // btnClearDrawing
             // 
-            this.button2.Location = new System.Drawing.Point(1087, 12);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(167, 23);
-            this.button2.TabIndex = 4;
-            this.button2.Text = "Clear Drawing";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnClearDrawing.Location = new System.Drawing.Point(1087, 12);
+            this.btnClearDrawing.Name = "btnClearDrawing";
+            this.btnClearDrawing.Size = new System.Drawing.Size(167, 23);
+            this.btnClearDrawing.TabIndex = 4;
+            this.btnClearDrawing.Text = "Clear Drawing";
+            this.btnClearDrawing.UseVisualStyleBackColor = true;
+            // 
+            // panel1
+            // 
+            this.panel1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Location = new System.Drawing.Point(12, 44);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1242, 602);
+            this.panel1.TabIndex = 0;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1273, 656);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.btnClearDrawing);
             this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.checkBoxGridSnap);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnToggleGaze);
             this.Controls.Add(this.panel1);
             this.Name = "Form1";
             this.Text = "Tobii Eye Tracking Grid Draw";
@@ -107,10 +107,10 @@
         #endregion
 
         private GridPanel panel1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnToggleGaze;
         private System.Windows.Forms.CheckBox checkBoxGridSnap;
         private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnClearDrawing;
     }
 }
 

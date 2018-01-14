@@ -144,6 +144,11 @@ namespace TobiiEyeXGrid
             mouse_event(MOUSEEVENTF_LEFTUP, (uint)Cursor.Position.X, (uint)Cursor.Position.Y, 0, 0);
         }
 
+        public void clearDrawing()
+        {
+            edges.Clear();
+        }
+
         private void createGazeDataStream()
         {
             Host host = new Host();

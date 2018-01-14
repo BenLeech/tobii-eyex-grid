@@ -33,7 +33,8 @@ namespace TobiiEyeXGrid
             panel1.MouseUp += controller.handleMouseUp;
             panel1.MouseMove += controller.handleMouseMove;
 
-            button1.Click += controller.handleToggleGazeButtonClick;
+            btnToggleGaze.Click += controller.handleToggleGazeButtonClick;
+            btnClearDrawing.Click += controller.handleClearDrawingButtonClick;
 
             this.KeyPress += controller.handleKeyPress;
             this.KeyDown += controller.handleKeyDown;

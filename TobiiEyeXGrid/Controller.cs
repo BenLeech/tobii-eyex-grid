@@ -52,13 +52,17 @@ namespace TobiiEyeXGrid
             model.toggleGazeControl();
         }
 
+        public void handleClearDrawingButtonClick(object sender, EventArgs e)
+        {
+            model.clearDrawing();
+        }
+
         public void handleKeyPress(object sender, KeyPressEventArgs e)
         {
             if(e.KeyChar == 't')
             {
                 model.toggleGazeControl();
             }
-            
         }
 
         public void handleKeyDown(object sender, KeyEventArgs e)
