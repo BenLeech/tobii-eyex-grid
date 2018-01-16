@@ -10,12 +10,15 @@ namespace TobiiEyeXGrid
 {
     public class Model
     {
-        public Boolean gazeEnabled;
-        public Boolean gridSnap = true;
+        public bool gazeEnabled;
+        public bool gridSnap = true;
+        public bool showGrid = true;
 
         public List<Vertex> vertices;
         public List<Edge> edges;
         public List<GridLine> gridLines;
+
+        public GridPanel gridPanel;
 
         const int GRID_SPACING = 40;
         const int VERTEX_RADIUS = 5;

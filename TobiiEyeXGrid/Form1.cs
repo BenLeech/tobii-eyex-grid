@@ -20,6 +20,7 @@ namespace TobiiEyeXGrid
             model = aModel;
             view = aView;
             controller = aController;
+            model.gridPanel = panel1;
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -35,6 +36,9 @@ namespace TobiiEyeXGrid
 
             btnToggleGaze.Click += controller.handleToggleGazeButtonClick;
             btnClearDrawing.Click += controller.handleClearDrawingButtonClick;
+
+            checkBoxGridSnap.CheckedChanged += controller.handleGridSnapCheckChange;
+            checkboxShowGrid.CheckedChanged += controller.handleShowGridCheckStateChange;
 
             this.KeyPress += controller.handleKeyPress;
             this.KeyDown += controller.handleKeyDown;

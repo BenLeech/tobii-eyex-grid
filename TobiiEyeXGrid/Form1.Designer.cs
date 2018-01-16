@@ -30,7 +30,7 @@
         {
             this.btnToggleGaze = new System.Windows.Forms.Button();
             this.checkBoxGridSnap = new System.Windows.Forms.CheckBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.checkboxShowGrid = new System.Windows.Forms.CheckBox();
             this.btnClearDrawing = new System.Windows.Forms.Button();
             this.panel1 = new TobiiEyeXGrid.GridPanel();
             this.SuspendLayout();
@@ -56,17 +56,17 @@
             this.checkBoxGridSnap.Text = "Snap to Grid";
             this.checkBoxGridSnap.UseVisualStyleBackColor = true;
             // 
-            // checkBox1
+            // checkboxShowGrid
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Checked = true;
-            this.checkBox1.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBox1.Location = new System.Drawing.Point(349, 18);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(103, 17);
-            this.checkBox1.TabIndex = 3;
-            this.checkBox1.Text = "Show Grid Lines";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkboxShowGrid.AutoSize = true;
+            this.checkboxShowGrid.Checked = true;
+            this.checkboxShowGrid.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkboxShowGrid.Location = new System.Drawing.Point(349, 18);
+            this.checkboxShowGrid.Name = "checkboxShowGrid";
+            this.checkboxShowGrid.Size = new System.Drawing.Size(103, 17);
+            this.checkboxShowGrid.TabIndex = 3;
+            this.checkboxShowGrid.Text = "Show Grid Lines";
+            this.checkboxShowGrid.UseVisualStyleBackColor = true;
             // 
             // btnClearDrawing
             // 
@@ -92,7 +92,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1273, 656);
             this.Controls.Add(this.btnClearDrawing);
-            this.Controls.Add(this.checkBox1);
+            this.Controls.Add(this.checkboxShowGrid);
             this.Controls.Add(this.checkBoxGridSnap);
             this.Controls.Add(this.btnToggleGaze);
             this.Controls.Add(this.panel1);
@@ -109,7 +109,7 @@
         private GridPanel panel1;
         private System.Windows.Forms.Button btnToggleGaze;
         private System.Windows.Forms.CheckBox checkBoxGridSnap;
-        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.CheckBox checkboxShowGrid;
         private System.Windows.Forms.Button btnClearDrawing;
     }
 }

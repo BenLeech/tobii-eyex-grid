@@ -55,6 +55,18 @@ namespace TobiiEyeXGrid
         public void handleClearDrawingButtonClick(object sender, EventArgs e)
         {
             model.clearDrawing();
+            model.gridPanel.Invalidate();
+        }
+
+        public void handleGridSnapCheckChange(object sender, EventArgs e)
+        {
+            model.gridSnap = (sender as CheckBox).Checked;
+        }
+
+        public void handleShowGridCheckStateChange(object sender, EventArgs e)
+        {
+            model.showGrid = (sender as CheckBox).Checked;
+            model.gridPanel.Invalidate();
         }
 
         public void handleKeyPress(object sender, KeyPressEventArgs e)

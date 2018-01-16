@@ -7,7 +7,7 @@ using System.Windows.Forms;
 
 namespace TobiiEyeXGrid
 {
-    class GridPanel : Panel
+   public class GridPanel : Panel
     {
         public GridPanel()
         {

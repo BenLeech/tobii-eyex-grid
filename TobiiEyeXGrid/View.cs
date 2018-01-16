@@ -35,10 +35,14 @@ namespace TobiiEyeXGrid
             g.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
 
             //draw each grid line
-            foreach (GridLine gridLine in model.gridLines)
+            if (model.showGrid)
             {
-                g.DrawLine(greyPen, gridLine.x1, gridLine.y1, gridLine.x2, gridLine.y2);
+                foreach (GridLine gridLine in model.gridLines)
+                {
+                    g.DrawLine(greyPen, gridLine.x1, gridLine.y1, gridLine.x2, gridLine.y2);
+                }
             }
+            
 
             //draw each vertex in the model
             foreach (Vertex vertex in model.vertices)
