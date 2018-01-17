@@ -136,6 +136,7 @@ namespace TobiiEyeXGrid
 
         public void toggleGazeControl()
         {
+            Debug.WriteLine("toggle gaze control");
             gazeEnabled = !gazeEnabled;
         }
 

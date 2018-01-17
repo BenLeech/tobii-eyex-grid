@@ -79,7 +79,7 @@ namespace TobiiEyeXGrid
 
         public void handleKeyDown(object sender, KeyEventArgs e)
         {
-            if(e.KeyCode == Keys.Space)
+            if(e.KeyCode == Keys.Z)
             {
                 model.doMouseDown();
             }
@@ -87,7 +87,7 @@ namespace TobiiEyeXGrid
 
         public void handleKeyUp(object sender, KeyEventArgs e)
         {
-            if(e.KeyCode == Keys.Space)
+            if(e.KeyCode == Keys.Z)
             {
                 model.doMouseUp();
             }

@@ -41,8 +41,10 @@
             this.btnToggleGaze.Name = "btnToggleGaze";
             this.btnToggleGaze.Size = new System.Drawing.Size(200, 23);
             this.btnToggleGaze.TabIndex = 1;
+            this.btnToggleGaze.TabStop = false;
             this.btnToggleGaze.Text = "Toggle Gaze Control   ( t )";
             this.btnToggleGaze.UseVisualStyleBackColor = true;
+            this.btnToggleGaze.Click += new System.EventHandler(this.btnToggleGaze_Click);
             // 
             // checkBoxGridSnap
             // 

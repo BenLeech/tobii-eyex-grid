@@ -55,5 +55,10 @@ namespace TobiiEyeXGrid
         {
             //Environment.Exit(Environment.ExitCode);
         }
+
+        private void btnToggleGaze_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
