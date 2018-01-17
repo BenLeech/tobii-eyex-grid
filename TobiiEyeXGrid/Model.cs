@@ -124,13 +124,17 @@ namespace TobiiEyeXGrid
         //creates new vertices and grid lines
         public void generateGrid(Panel panel)
         {
-            for(int i=0; i<32; i++)
+            for(int i=0; (i * GRID_SPACING) <= gridPanel.Height; i++)
             {
-                for(int k=0; k<16; k++)
+                createGridLine(0, i * GRID_SPACING, gridPanel.Width, i * GRID_SPACING);
+            }
+            
+            for(int i=0; (i * GRID_SPACING) <= gridPanel.Width; i++)
+            {
+                createGridLine(i * GRID_SPACING, 0, i * GRID_SPACING, gridPanel.Height);
+                for (int k=0; (k * GRID_SPACING) <= gridPanel.Height; k++)
                 {
                     createVertex((i* GRID_SPACING), (k * GRID_SPACING), VERTEX_RADIUS);
-                    createGridLine((i * GRID_SPACING), (k * GRID_SPACING), (i * GRID_SPACING) + GRID_SPACING, (k * GRID_SPACING));
-                    createGridLine((i * GRID_SPACING), (k * GRID_SPACING), (i * GRID_SPACING), (k * GRID_SPACING) + GRID_SPACING);
                 }
             }
 
