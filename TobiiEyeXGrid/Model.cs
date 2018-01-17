@@ -31,6 +31,7 @@ namespace TobiiEyeXGrid
         private const int MOUSEEVENTF_LEFTDOWN = 0x02;
         private const int MOUSEEVENTF_LEFTUP = 0x04;
 
+        private Host host;
 
         public Model()
         {
@@ -40,6 +41,7 @@ namespace TobiiEyeXGrid
             gridLines = new List<GridLine>();
 
             //create data stream
+            host = new Host();
             createGazeDataStream();
         }
 
@@ -157,7 +159,6 @@ namespace TobiiEyeXGrid
 
         private void createGazeDataStream()
         {
-            Host host = new Host();
             var gazePointDataStream = host.Streams.CreateGazePointDataStream(Tobii.Interaction.Framework.GazePointDataMode.LightlyFiltered);
             gazePointDataStream.GazePoint((x, y, _) => {
                 if (gazeEnabled)
