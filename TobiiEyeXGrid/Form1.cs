@@ -53,7 +53,7 @@ namespace TobiiEyeXGrid
 
         private void Form1_Close(object sender, EventArgs e)
         {
-            Environment.Exit(Environment.ExitCode);
+            //Environment.Exit(Environment.ExitCode);
         }
     }
 }

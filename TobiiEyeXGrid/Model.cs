@@ -17,11 +17,13 @@ namespace TobiiEyeXGrid
         public List<Vertex> vertices;
         public List<Edge> edges;
         public List<GridLine> gridLines;
-
         public GridPanel gridPanel;
 
         const int GRID_SPACING = 40;
         const int VERTEX_RADIUS = 5;
+        const float alpha = 0.3f;
+
+        private Point prevPoint;
 
         [DllImport("user32.dll", CharSet = CharSet.Auto, CallingConvention = CallingConvention.StdCall)]
         public static extern void mouse_event(uint dwFlags, uint dx, uint dy, uint cButtons, uint dwExtraInfo);
@@ -155,13 +157,25 @@ namespace TobiiEyeXGrid
         private void createGazeDataStream()
         {
             Host host = new Host();
-            var gazePointDataStream = host.Streams.CreateGazePointDataStream();
+            var gazePointDataStream = host.Streams.CreateGazePointDataStream(Tobii.Interaction.Framework.GazePointDataMode.LightlyFiltered);
             gazePointDataStream.GazePoint((x, y, _) => {
                 if (gazeEnabled)
                 {
-                    Cursor.Position = new Point((int)x, (int)y);
+                    Cursor.Position = smoothFilter(new Point((int)x,(int)y));
                 }
             });
+        }
+
+        private Point smoothFilter(Point point)
+        {
+            if (prevPoint == null)
+            {
+                prevPoint = point;
+            }
+
+            Point filteredPoint = new Point((int)((point.X * alpha) + (prevPoint.X * (1.0f - alpha))),(int)((point.Y * alpha) + (prevPoint.Y * (1.0f - alpha))));
+            prevPoint = filteredPoint;
+            return filteredPoint;
         }
 
     }
