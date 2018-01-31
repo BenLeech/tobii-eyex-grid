@@ -1,17 +1,23 @@
 # Tobii Eye Grid Drawing
-Grid Drawing application for the Tobii Eyex/4c
+Grid Drawing application for the Tobii EyeX/4c
 
 ## Table of Contents
 1. [Setting up the 4c](#setting-up-the-4c)
-2. Getting started
-3. Creating your own data streams from the Tobii API
-4. Documentation and References
-5. Smoothing Algorithm
-6. Known Issues
-7. Operating System Support and Language Bindings
+2. [Getting started](#getting-started)
+3. [Creating your own data streams from the Tobii API](#creating-your-own-data-streams-from-the-tobii-api)
+4. [Documentation and References](#documentation-and-references)
+5. [Smoothing Algorithm](#smoothing-algorithm)
+6. [Known Issues](#known-issues)
+7. [Operating System Support and Language Bindings](#operating-system-support-and-language-bindings)
 8. [Tobii License Information](#tobii-license-information)
 
 ## Setting up the 4c
+1. Position the eye tracker below your screen, angled slightly up.
+2. Plug the eye tracker into your computer's USB slot
+3. Download the [Tobii Eye Tracking Core Software](https://tobiigaming.com/getstarted/)
+4. Open and follow the on-screen instructions to install.
+5. Click the Tobii Eye Tracking menu from the bottom right of the Window's taskbar
+6. Set-up a profile for each user (for most accurate results) and calibrate
 
 ## Getting started
 
