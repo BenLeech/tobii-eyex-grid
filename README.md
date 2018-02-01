@@ -1,5 +1,5 @@
 # Tobii Eye Grid Drawing
-Grid Drawing application for the Tobii EyeX/4c
+State-based Grid Drawing application for the Tobii EyeX/4c
 
 ## Table of Contents
 1. [Setting up the 4c](#setting-up-the-4c)
@@ -20,8 +20,41 @@ Grid Drawing application for the Tobii EyeX/4c
 6. Set-up a profile for each user (for most accurate results) and calibrate
 
 ## Getting started
+To open or run this application locally, first clone/download/fork this repository.
 
-## Creating your own data streams from the Tobii API
+[Cloning a repository](https://help.github.com/articles/cloning-a-repository/)
+
+[Forking a repository](https://help.github.com/articles/fork-a-repo/)
+
+Run the application from ./TobiiEyeXGrid/TobiiEyexGridApplication.cs, the main class.
+
+## Using Tobii SDK in your own projects
+If you start a project from scratch, you will need to add the Tobii Core SDK into your project first. Here is a method to reference the SDK using NuGet Package Manager. The installation guides from Tobii's development website are outdated, so following this guide is recommended.
+
+#### Use Nuget Package Installation
+1. Open Visual Studio
+2. Ensure that Nuget Package Manager is installed by clicking the Tools menu and looking for 'Nuget Package Manager'.
+   - If it is not there, go to 'Tools -> Get Tools and Features', search for NuGet Package Manager, and install.
+3. Expand the Tool menu and click the Options
+4. Expand the NuGet Package Manager from the left tree view
+5. Choose the Package Sources
+6. If nuget.org https://api.nuget.org/v3/index.json isn't listed as a package source:
+   - Type org in the name field
+   - Type https://api.nuget.org/v3/index.json repository URL in the source field
+   - Click on Update
+   - Restart Visual Studio
+7. Ensure that you have the nuget package source from the above step. Close NuGet Package Manager options if you have it open.
+8. Expand your project in the Solution Explorer
+9. Right click on the References
+10. Choose Manage Nuget Packages… from the menu
+12. Click Browse
+13. Choose the org package source to the right
+14. Search for Tobii
+15. Choose package Tobii.Interaction
+16. Click the latest stable version (I am using v0.73)
+17. Click Install
+
+## Creating your own data streams from the Tobii SDK
 
 ## Documentation and References
 [Tobii Handbook](https://tobii.github.io/CoreSDK/articles/intro.html) (Helpful tutorials, slightly outdated)
