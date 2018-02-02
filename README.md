@@ -11,6 +11,15 @@ State-based Grid Drawing application for the Tobii EyeX/4c
 7. [Operating System Support and Language Bindings](#operating-system-support-and-language-bindings)
 8. [Tobii License Information](#tobii-license-information)
 
+## Documentation and References
+[Tobii Handbook](https://tobii.github.io/CoreSDK/articles/intro.html) (Helpful tutorials, slightly outdated)
+
+[Tobii API Documentation](https://tobii.github.io/CoreSDK/api/index.html) (Unfinished, slightly outdated)
+
+[Tobii Developer Forums](http://developer.tobii.com/community-forums/)
+
+[Implementation Samples](https://github.com/Tobii/CoreSDK/tree/master/samples)
+
 ## Setting up the 4c
 1. Position the eye tracker below your screen, angled slightly up.
 2. Plug the eye tracker into your computer's USB slot
@@ -55,15 +64,52 @@ If you start a project from scratch, you will need to add the Tobii Core SDK int
 17. Click Install
 
 ## Creating your own data streams from the Tobii SDK
+To create any data streams using the Tobii SDK, you first need to instantiate a host from the Tobii Interaction package.
+```
+using Tobii.Interaction;
 
-## Documentation and References
-[Tobii Handbook](https://tobii.github.io/CoreSDK/articles/intro.html) (Helpful tutorials, slightly outdated)
+...
 
-[Tobii API Documentation](https://tobii.github.io/CoreSDK/api/index.html) (Unfinished, slightly outdated)
+private Host host = new Host();
+```
+The host creates a connection between the application and the Interaction engine, andis the main provider for the various eye tracking features. Intantiating a host provides one Tobii eye tracking context, and it is possible to create more than one host in a process. 
 
-[Tobii Developer Forums](http://developer.tobii.com/community-forums/)
+To start a gaze point data stream, call Streams.CreateGazePointDataStream() on a host. Calling GazePoint(x,y,ts) on the data stream exposes functional access to the stream, where x is the gaze's X position relative to the top left corner of the screen, where y is the gaze's Y position relative to the top left corner of the screen, and where ts is the timestamp of when the data node was recorded.
+```
+GazePointDataStream gazePointDataStream = host.Streams.CreateGazePointDataStream();
 
-[Implementation Samples](https://github.com/Tobii/CoreSDK/tree/master/samples)
+gazePointDataStream.GazePoint((x, y, ts) => {
+        Console.WriteLine("Gaze Position and Timestamp: {0}\t X: {1} Y:{2}", ts, x, y));
+});
+```
+
+Another option on how to implement the same functionality is my using the 'Next' event on the gaze point data stream instance
+```
+GazePointDataStream gazePointDataStream = host.Streams.CreateGazePointDataStream();
+gazePointDataStream.Next += OnGazePointData;
+
+private OnGazePointData(object sender, StreamData<GazePointData> streamData){
+       Console.WriteLine("Gaze Position and Timestamp: {0}\t X: {1} Y:{2}", streamData.Data.Timestamp, streamData.Data.X, streamData.Data.Y); 
+}
+```
+
+You can also choose to unfilter or lightly filter the gaze data in the creation of the data stream. There are currently only two options, unfiltered and lightly filtered. By default it is set at lightly filtered, but you can specify to unfiltered the stream by passing the enum value in the CreateGazePointDataStream() method params.
+
+```
+GazePointDataStream gazePointDataStream = host.Streams.CreateGazePointDataStream(GazePointDataMode.Unfiltered);
+```
+
+“Lightly filtered” is an adaptive filter which is weighted based on the age of the gaze data points GazePointData and the velocity of the eye movements. This filter is designed to remove noise and in the same time being responsive to quick eye movements. It is recommended to keep the filter on.
+
+There are also three other types of data streams currently.
+- Eye Position (physical location of the eyes)
+- Fixation (stream of position and time of where the gaze gets fixated)
+- Head Pose (phyiscal location of the head, only works on the 4c).
+
+You can destory a host by calling the dispose method on a host instance.
+```
+host.Dispose();
+```
 
 ## Smoothing Algorithm
 This application contains basic live data smoothing techniques and algorithms to help smooth the noise of the eye tracking data stream.
