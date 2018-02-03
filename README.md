@@ -2,14 +2,15 @@
 State-based Grid Drawing application for the Tobii EyeX/4c
 
 ## Table of Contents
-1. [Setting up the 4c](#setting-up-the-4c)
-2. [Getting started](#getting-started)
-3. [Creating your own data streams from the Tobii API](#creating-your-own-data-streams-from-the-tobii-api)
-4. [Documentation and References](#documentation-and-references)
-5. [Smoothing Algorithm](#smoothing-algorithm)
-6. [Known Issues](#known-issues)
-7. [Operating System Support and Language Bindings](#operating-system-support-and-language-bindings)
-8. [Tobii License Information](#tobii-license-information)
+1. [Documentation and References](#documentation-and-references)
+2. [Setting up the 4c](#setting-up-the-4c)
+3. [Getting started](#getting-started)
+4. [Using Tobii SDK in your own projects](#using-tobii-sdk-in-your-own-projects)
+5. [Creating your own data streams from the Tobii SDK](#creating-your-own-data-streams-from-the-tobii-sdk)
+6. [Smoothing Algorithm](#smoothing-algorithm)
+7. [Known Issues](#known-issues)
+8. [Operating System Support and Language Bindings](#operating-system-support-and-language-bindings)
+9. [Tobii License Information](#tobii-license-information)
 
 ## Documentation and References
 [Tobii Handbook](https://tobii.github.io/CoreSDK/articles/intro.html) (Helpful tutorials, slightly outdated)
@@ -121,6 +122,11 @@ It can be found here:
 http://hci.stanford.edu/cstr/reports/2007-03.pdf
 
 ## Known Issues
+##### Offset gaze coordinates and window scale
+   * Window's scale setting must be set at 1:1 or 100%, otherwise gaze coordinates will be offset and not where the user is actually looking.
+
+##### Tobii EyeX is not compatible with Tobii v2.11
+   * A complete uninstall is required between each use with 2.11. There are no issues with the Tobii 4c
 
 ## Operating System Support and Language Bindings
 Operating Systems Supported: Windows7, Windows8, Windows10
@@ -128,3 +134,10 @@ Operating Systems Supported: Windows7, Windows8, Windows10
 Language Bindings: C#
 
 ## Tobii License Information
+This application and any applications developed during the hackathon event are under Tobii's Interactive Use license agreement. This means that the SDK can be used freely to develop games or other software where eye tracking data is used as a user input for interactive experiences. 
+
+However, this application and any applications developed during the hackathon event must not be used for analytic use. Tobii defines analytical use as the following.
+
+> Analytical Use is where eye tracking data is either (a) stored; or (b) transferred to another computing device or network; in both cases where the intent is to use or make it possible to use eye tracking data to analyze, record, visualize or interpret behavior or attention.
+
+[Download and read the full license agreement for Tobii SDK](http://developer.tobii.com/?wpdmdl=203)
